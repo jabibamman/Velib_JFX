@@ -46,7 +46,8 @@ public class JPasserelle {
                             // Les stations supérieures à 4 de longueur sont les autres arrondissements
                             } else {
                                 num_adresse = stationcode.substring(0, 2);
-                            }
+
+                        }
 
                         break;
 
@@ -85,7 +86,8 @@ public class JPasserelle {
                         } else {
                             // Cette condition permet de retourner les stations mobiles du 92 et sinon elle affiche toutes les stations dans les départements
                             if (stationcode.substring(0, 2).equals("92")) {
-                                num_adresse = stationcode.substring(0, 2) + " , mobile";
+                                // Mobile 92 (stationcode.substring(0, 2))
+                                num_adresse = "mobile";
                             } else {
                                 num_adresse = "9" + stationcode.charAt(0);
                             }

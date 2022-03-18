@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
     public static void main(String[] args) {
         launch();
 
-
+        /*
         Carte c = new Carte();
 
         c = JPasserelle.getCarte();
@@ -28,6 +28,8 @@ public class HelloApplication extends Application {
         System.out.println(c.nbStations());
         System.out.println(c.getLaStation(0));
         System.out.println(c.chercher("34012"));
+        */
+
     }
 
 

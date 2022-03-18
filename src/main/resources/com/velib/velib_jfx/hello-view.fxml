@@ -5,10 +5,10 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.TreeTableColumn?>
-<?import javafx.scene.control.TreeTableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -41,30 +41,30 @@
                            <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
                        </rowConstraints>
                         <children>
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="83.0" text="1">
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="1">
                               <toggleGroup>
                                  <ToggleGroup fx:id="choix" />
                               </toggleGroup>
                            </RadioButton>
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="367.0" text="2" toggleGroup="$choix" GridPane.columnIndex="1" />
-                           <RadioButton mnemonicParsing="false" text="6" toggleGroup="$choix" GridPane.rowIndex="1" />
-                           <RadioButton mnemonicParsing="false" prefWidth="0.0" text="7" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                           <RadioButton mnemonicParsing="false" text="3" toggleGroup="$choix" GridPane.columnIndex="2" />
-                           <RadioButton mnemonicParsing="false" text="8" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                           <RadioButton mnemonicParsing="false" text="4" toggleGroup="$choix" GridPane.columnIndex="3" />
-                           <RadioButton mnemonicParsing="false" text="9" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                           <RadioButton mnemonicParsing="false" text="5" toggleGroup="$choix" GridPane.columnIndex="4" />
-                           <RadioButton mnemonicParsing="false" text="10" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="11" toggleGroup="$choix" GridPane.rowIndex="2" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="12" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="13" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="14" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="15" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="16" toggleGroup="$choix" GridPane.rowIndex="3" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="17" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                           <RadioButton mnemonicParsing="false" prefWidth="45.0" text="18" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                           <RadioButton mnemonicParsing="false" prefHeight="21.0" prefWidth="66.0" text="20" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="130.0" text="19" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="367.0" text="2" toggleGroup="$choix" GridPane.columnIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="6" toggleGroup="$choix" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="0.0" text="7" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="3" toggleGroup="$choix" GridPane.columnIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="8" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="4" toggleGroup="$choix" GridPane.columnIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="9" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="5" toggleGroup="$choix" GridPane.columnIndex="4" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="10" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="11" toggleGroup="$choix" GridPane.rowIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="12" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="13" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="14" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="15" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="16" toggleGroup="$choix" GridPane.rowIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="17" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefWidth="45.0" text="18" toggleGroup="$choix" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="21.0" prefWidth="66.0" text="20" toggleGroup="$choix" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="130.0" text="19" toggleGroup="$choix" GridPane.columnIndex="3" GridPane.rowIndex="3" />
                         </children>
                      </GridPane>
                   </children>
@@ -83,11 +83,17 @@
                         </columnConstraints>
                         <rowConstraints>
                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="83.0" text="92" toggleGroup="$choix" />
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="367.0" text="93" toggleGroup="$choix" GridPane.columnIndex="1" />
-                           <RadioButton mnemonicParsing="false" text="94" toggleGroup="$choix" GridPane.columnIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="92" toggleGroup="$choix" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="367.0" text="93" toggleGroup="$choix" GridPane.columnIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" text="94" toggleGroup="$choix" GridPane.columnIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="95" GridPane.rowIndex="1">
+                              <toggleGroup>
+                                 <ToggleGroup fx:id="choix1" />
+                              </toggleGroup>
+                           </RadioButton>
                         </children>
                      </GridPane>
                   </children>
@@ -106,32 +112,32 @@
                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                         </rowConstraints>
                         <children>
-                           <RadioButton mnemonicParsing="false" prefHeight="18.0" prefWidth="110.0" text="mobile" toggleGroup="$choix" />
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="110.0" text="mobile" toggleGroup="$choix" />
                         </children>
                      </GridPane>
                   </children>
                </AnchorPane>
             </content>
          </TitledPane>
+         <Pane layoutX="28.0" layoutY="190.0" prefHeight="155.0" prefWidth="767.0" style="-fx-border-color: lightgrey; -fx-border-width: 1;">
+            <children>
+               <Label layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="94.0" text="Disponibilité" />
+               <Label id="date" fx:id="date" layoutX="22.0" layoutY="59.0" prefHeight="17.0" prefWidth="356.0" />
+               <Label id="v_dispo" fx:id="v_dispo" layoutX="22.0" layoutY="86.0" prefHeight="17.0" prefWidth="78.0" />
+               <Label id="nb_total_pAcces" fx:id="nb_total_pAcces" layoutX="22.0" layoutY="116.0" prefHeight="17.0" prefWidth="72.0" />
+               <Label id="etatStation" fx:id="etatStation" layoutX="490.0" layoutY="31.0" prefHeight="17.0" prefWidth="275.0" />
+               <Label id="pointAttacheDispo" fx:id="pointAttacheDispo" layoutX="490.0" layoutY="65.0" prefHeight="17.0" prefWidth="275.0" />
+               <Label id="cbDispo" fx:id="cb_dispo" layoutX="490.0" layoutY="95.0" prefHeight="17.0" prefWidth="275.0" />
+               <Label id="adresse" fx:id="adresse" layoutX="22.0" layoutY="31.0" prefHeight="17.0" prefWidth="356.0" />
+            </children>
+         </Pane>
+         <TableView fx:id="tableView" layoutX="22.0" layoutY="382.0" prefHeight="428.0" prefWidth="779.0">
+           <columns>
+             <TableColumn fx:id="numStation" prefWidth="75.0" text="Numéro" />
+             <TableColumn fx:id="adresseTree" prefWidth="459.0" text="Adresse" />
+               <TableColumn fx:id="bonus" prefWidth="139.0" text="Bonus" />
+               <TableColumn fx:id="ouvert" prefWidth="129.0" text="Ouvert" />
+           </columns>
+         </TableView>
       </children></AnchorPane>
-   <Pane prefHeight="532.0" prefWidth="803.0" style="-fx-border-color: lightgrey; -fx-border-width: 1;">
-      <children>
-         <Label layoutX="8.0" layoutY="6.0" prefHeight="17.0" prefWidth="72.0" text="Disponibilité" />
-         <Label id="date" fx:id="date" layoutX="22.0" layoutY="57.0" prefHeight="17.0" prefWidth="356.0" />
-         <Label id="v_dispo" fx:id="v_dispo" layoutX="22.0" layoutY="86.0" prefHeight="17.0" prefWidth="78.0" />
-         <Label id="nb_total_pAcces" fx:id="nb_total_pAcces" layoutX="22.0" layoutY="116.0" prefHeight="17.0" prefWidth="72.0" />
-         <Label id="etatStation" fx:id="etatStation" layoutX="490.0" layoutY="31.0" prefHeight="17.0" prefWidth="275.0" />
-         <Label id="pointAttacheDispo" fx:id="pointAttacheDispo" layoutX="490.0" layoutY="65.0" prefHeight="17.0" prefWidth="275.0" />
-         <Label id="cbDispo" fx:id="cbDispo" layoutX="490.0" layoutY="95.0" prefHeight="17.0" prefWidth="275.0" />
-         <Label id="adresse" fx:id="adresse" layoutX="22.0" layoutY="31.0" prefHeight="17.0" prefWidth="356.0" />
-      </children>
-   </Pane>
-   <TreeTableView prefHeight="200.0" prefWidth="802.0">
-     <columns>
-       <TreeTableColumn fx:id="numStation" prefWidth="75.0" text="Numéro" />
-       <TreeTableColumn fx:id="adresseTree" prefWidth="448.0" text="Adresse" />
-         <TreeTableColumn fx:id="bonus" prefWidth="142.0" text="Bonus" />
-         <TreeTableColumn prefWidth="136.0" text="Ouvert" />
-     </columns>
-   </TreeTableView>
 </VBox>

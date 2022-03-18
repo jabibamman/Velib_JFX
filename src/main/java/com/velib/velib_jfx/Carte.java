@@ -30,4 +30,8 @@ public class Carte {
     public int nbStations() {
         return mesStations.size();
     }
+
+    public ArrayList<Station> getMesStations() {
+        return mesStations;
+    }
 }
