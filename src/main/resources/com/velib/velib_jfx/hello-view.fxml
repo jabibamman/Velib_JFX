@@ -89,11 +89,7 @@
                            <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="92" toggleGroup="$choix" />
                            <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="367.0" text="93" toggleGroup="$choix" GridPane.columnIndex="1" />
                            <RadioButton mnemonicParsing="false" onAction="#changed" text="94" toggleGroup="$choix" GridPane.columnIndex="2" />
-                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="95" GridPane.rowIndex="1">
-                              <toggleGroup>
-                                 <ToggleGroup fx:id="choix1" />
-                              </toggleGroup>
-                           </RadioButton>
+                           <RadioButton mnemonicParsing="false" onAction="#changed" prefHeight="18.0" prefWidth="83.0" text="95" toggleGroup="$choix" GridPane.rowIndex="1" />
                         </children>
                      </GridPane>
                   </children>

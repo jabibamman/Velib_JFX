@@ -1,12 +1,10 @@
 package com.velib.velib_jfx;
 
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Group;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -54,7 +52,7 @@ public class HelloController implements Initializable {
     // Dès que le client appuie sur un arrondissement, département ou autre, il y aura les stations liés à son choix
     private void changed(ActionEvent e) {
         // on crée une liste intérmediaire permettant de recenser toutes les stations égales à la condition
-        ArrayList<Station>list_intermediaires = new ArrayList<Station>();
+        ArrayList<Station>list_intermediaires = new ArrayList<>();
 
         // On renitialise le tableau de toutes les stations
         list.clear();
