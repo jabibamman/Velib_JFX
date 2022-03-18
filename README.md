@@ -133,8 +133,8 @@ Pour plus d'exemples, veuillez vous référer à la [Documentation](https://gith
     - [❌] Adresses de stations non disponibles
         - [✅] Les coordonnées Géographiques des stations sont disponibles
 - [✅] Méthodes fonctionnelles
-    - [❌] Les méthodes de la classe velib.Station ne sont pas réalisées
-- [❌] Mise en place de la partie graphique
+    - [✅] Les méthodes de la classe Station sont  réalisées
+- [🟠] Mise en place de la partie graphique
 
 Voir les [problèmes ouverts](https://github.com/github_username/repo_name/issues) pour une liste complète des fonctionnalités proposées (et des problèmes connus).
 
