@@ -2,13 +2,18 @@ package com.velib.velib_jfx;
 
 public class Station extends Carte {
     private String nom, numero, bonus, ouvert, arrondissement;
+    private int capacite, velo_disp, emplacement_disp;
 
-    public Station(String numero, String nom, String arrondissement, String bonus, String ouvert) {
+    public Station(String numero, String nom, String arrondissement, String bonus, String ouvert, int capacite, int velo_disp, int emplacement_disp) {
         this.numero = numero;
         this.nom = nom;
         this.arrondissement = arrondissement;
         this.bonus = bonus;
         this.ouvert = ouvert;
+        this.capacite = capacite;
+        this.velo_disp = velo_disp;
+        this.emplacement_disp = emplacement_disp;
+
     }
 
     public String getNom() {
@@ -31,6 +36,17 @@ public class Station extends Carte {
         return ouvert;
     }
 
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public int getVelo_disp() {
+        return velo_disp;
+    }
+
+    public int getEmplacement_disp() {
+        return emplacement_disp;
+    }
 
     @Override
     public String toString() {

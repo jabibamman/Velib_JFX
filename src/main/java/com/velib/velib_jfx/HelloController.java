@@ -5,7 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -76,7 +79,17 @@ public class HelloController implements Initializable {
 
     @FXML
     // TODO réaliser le code permettant de changer la disponibilité des stations - AVANT LE 23/03/22
-    private void changedDispo(ActionEvent e) {
+    // La date n'est pas encore rajoutée vérifier la partie (date_timestamp)
+
+    private void changedDispo() {
+        adresse.setText(tableView.getSelectionModel().getSelectedItem().getNom());
+        date.setText("");
+        v_dispo.setText("Vélos disponibles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getVelo_disp()));
+        nb_total_pAcces.setText("Nombre total de points d'attache : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getCapacite()));
+        etatStation.setText(tableView.getSelectionModel().getSelectedItem().isOuvert());
+        pointAttacheDispo.setText("Points d'attache disponbiles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getEmplacement_disp()));
+        cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getBonus());
+
 
     }
 
