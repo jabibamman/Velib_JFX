@@ -101,7 +101,7 @@ public class JPasserelle {
                 }
 
                 // À chaque tour de boucle on insère la station qui a pour index la variable i
-                c.ajouteStation(stationcode, fields.getString("name"), num_adresse, fields.getString("is_renting"), fields.getString("is_installed"), fields.getInt("capacity"), fields.getInt("numdocksavailable"), fields.getInt("numbikesavailable"));
+                c.ajouteStation(stationcode, fields.getString("name"), num_adresse, fields.getString("is_renting"), fields.getString("is_installed"), fields.getInt("capacity"), fields.getInt("numdocksavailable"), fields.getInt("numbikesavailable"), fields.getString("duedate"));
             }
         } catch (FileNotFoundException e) {
             System.err.println("Erreur : le fichier n'existe pas !\n" + e);

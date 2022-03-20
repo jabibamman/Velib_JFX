@@ -10,6 +10,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.paint.Color;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class HelloController implements Initializable {
 
     @FXML
     // Dès que le client appuie sur un arrondissement, département ou autre, il y aura les stations liés à son choix
-    private void changed(ActionEvent e) {
+    private void changerArrondissement(ActionEvent e) {
         // on crée une liste intérmediaire permettant de recenser toutes les stations égales à la condition
         ArrayList<Station>list_intermediaires = new ArrayList<>();
 
@@ -81,15 +82,20 @@ public class HelloController implements Initializable {
     // TODO réaliser le code permettant de changer la disponibilité des stations - AVANT LE 23/03/22
     // La date n'est pas encore rajoutée vérifier la partie (date_timestamp)
 
-    private void changedDispo() {
+    private void changerDispo() {
         adresse.setText(tableView.getSelectionModel().getSelectedItem().getNom());
-        date.setText("");
+        date.setText("le : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getDate()));
         v_dispo.setText("Vélos disponibles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getVelo_disp()));
         nb_total_pAcces.setText("Nombre total de points d'attache : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getCapacite()));
-        etatStation.setText(tableView.getSelectionModel().getSelectedItem().isOuvert());
+        etatStation.setText("Station Ouverte : " + tableView.getSelectionModel().getSelectedItem().isOuvert());
         pointAttacheDispo.setText("Points d'attache disponbiles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getEmplacement_disp()));
         cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getBonus());
 
+        if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI")) {
+            etatStation.setTextFill(Color.color(0, 1, 0));
+        }else{
+            etatStation.setTextFill(Color.color(1, 0, 0));
+        }
 
     }
 
