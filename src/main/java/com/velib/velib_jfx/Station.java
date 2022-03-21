@@ -4,7 +4,7 @@ public class Station extends Carte {
     private String nom, numero, bonus, ouvert, arrondissement, date;
     private int capacite, velo_disp, emplacement_disp;
 
-    public Station(String numero, String nom, String arrondissement, String bonus, String ouvert, int capacite, int velo_disp, int emplacement_disp, String date) {
+    public Station(String numero, String nom, String arrondissement, String bonus, String ouvert, int capacite, int emplacement_disp, int velo_disp, String date) {
         this.numero = numero;
         this.nom = nom;
         this.arrondissement = arrondissement;
@@ -50,17 +50,9 @@ public class Station extends Carte {
     }
 
     public String getDate() {
-
         date = date.replaceAll("T", " à ");
 
-
-        // TODO Ne fonctionne pas, si l'utilisateur re-clique sur la station précédemment cliqué, ça continue a supprimer,
-        // Il faut trouver une solution pour que ça supprimer le "+00:00".
-        //date = date.substring(0, date.length()-6 );
-
-
-
-
+        // date.length()-6 pour supprimer le "+00:00" à la fin de la date
         return date;
     }
 

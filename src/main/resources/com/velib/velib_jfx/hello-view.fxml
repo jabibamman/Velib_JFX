@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- TODO réussir à insérer les données et à gérer le responsive... -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-
-<VBox alignment="CENTER" prefHeight="426.0" prefWidth="843.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velib.velib_jfx.HelloController">
+<VBox alignment="CENTER" prefHeight="426.0" prefWidth="843.0" spacing="20.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.velib.velib_jfx.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
     </padding>
@@ -61,11 +69,11 @@
                </AnchorPane>
            </content>
          </TitledPane>
-         <TitledPane animated="false" layoutX="247.0" layoutY="14.0" text="Départements">
+         <TitledPane animated="false" layoutX="301.0" layoutY="14.0" text="Départements">
             <content>
                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="200.0">
                   <children>
-                     <GridPane layoutX="4.0" layoutY="14.0" prefWidth="192.0">
+                     <GridPane layoutX="14.0" layoutY="14.0" prefHeight="60.0" prefWidth="184.0">
                         <columnConstraints>
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="65.0" />
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="65.0" />
@@ -78,19 +86,19 @@
                         <children>
                            <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" prefHeight="18.0" prefWidth="83.0" text="92" toggleGroup="$choix" />
                            <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" prefHeight="18.0" prefWidth="367.0" text="93" toggleGroup="$choix" GridPane.columnIndex="1" />
-                           <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" text="94" toggleGroup="$choix" GridPane.columnIndex="2" />
-                           <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" prefHeight="18.0" prefWidth="83.0" text="95" toggleGroup="$choix" GridPane.rowIndex="1" />
+                           <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" prefHeight="18.0" prefWidth="46.0" text="94" toggleGroup="$choix" GridPane.columnIndex="2" />
+                           <RadioButton mnemonicParsing="false" onAction="#changerArrondissement" prefHeight="18.0" prefWidth="83.0" text="95" toggleGroup="$choix" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         </children>
                      </GridPane>
                   </children>
                </AnchorPane>
             </content>
          </TitledPane>
-         <TitledPane animated="false" layoutX="495.0" layoutY="14.0" text="Autres">
+         <TitledPane animated="false" layoutX="578.0" layoutY="14.0" text="Autres">
             <content>
                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="128.0" prefWidth="200.0">
                   <children>
-                     <GridPane prefWidth="192.0">
+                     <GridPane layoutX="65.0" layoutY="34.0" prefHeight="30.0" prefWidth="71.0">
                         <columnConstraints>
                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="168.0" minWidth="10.0" prefWidth="65.0" />
                         </columnConstraints>

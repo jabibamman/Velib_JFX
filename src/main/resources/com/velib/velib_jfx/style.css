@@ -2,27 +2,6 @@
     -fx-text-fill: #ff22fd;
 }
 
-#date {
-    -fx-text-fill: red;
-}
-
-
-#v_dispo {
-    -fx-text-fill: red;
-}
-
-#nb_total_pAcces {
-    -fx-text-fill: red;
-}
-
-#etatStation {
-    -fx-text-fill: red;
-}
-
-#pointAttacheDispo {
-    -fx-text-fill: red;
-}
-
-#cbDispo {
+#date, #v_dispo, #nb_total_pAcces, #etatStation, #pointAttacheDispo, #cbDispo {
     -fx-text-fill: red;
 }
