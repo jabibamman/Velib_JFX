@@ -134,7 +134,7 @@ Pour plus d'exemples, veuillez vous référer à la [Documentation](https://gith
         - [✅] Les coordonnées Géographiques des stations sont disponibles
 - [✅] Méthodes fonctionnelles
     - [✅] Les méthodes de la classe Station sont  réalisées
-- [🟠] Mise en place de la partie graphique
+- [✅] Mise en place de la partie graphique
 
 Voir les [problèmes ouverts](https://github.com/github_username/repo_name/issues) pour une liste complète des fonctionnalités proposées (et des problèmes connus).
 
