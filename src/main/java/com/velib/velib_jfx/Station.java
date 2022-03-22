@@ -1,14 +1,14 @@
 package com.velib.velib_jfx;
 
 public class Station extends Carte {
-    private String nom, numero, bonus, ouvert, arrondissement, date;
+    private String nom, numero, cbDispo, ouvert, arrondissement, date;
     private int capacite, velo_disp, emplacement_disp;
 
-    public Station(String numero, String nom, String arrondissement, String bonus, String ouvert, int capacite, int emplacement_disp, int velo_disp, String date) {
+    public Station(String numero, String nom, String arrondissement, String cbDispo, String ouvert, int capacite, int emplacement_disp, int velo_disp, String date) {
         this.numero = numero;
         this.nom = nom;
         this.arrondissement = arrondissement;
-        this.bonus = bonus;
+        this.cbDispo = cbDispo;
         this.ouvert = ouvert;
         this.capacite = capacite;
         this.velo_disp = velo_disp;
@@ -25,8 +25,8 @@ public class Station extends Carte {
         return arrondissement;
     }
 
-    public String getBonus() {
-        return bonus;
+    public String getCbDispo() {
+        return cbDispo;
     }
 
     public String getNumero() {
@@ -50,10 +50,8 @@ public class Station extends Carte {
     }
 
     public String getDate() {
-        date = date.replaceAll("T", " à ");
-
-        // date.length()-6 pour supprimer le "+00:00" à la fin de la date
-        return date;
+        // date.replaceAll("T", " à ") pour mieux formater la date, date.length()-4 pour supprimer le "+00:00" à la fin de la date
+        return date.replaceAll("T", " à ").substring(0, date.length()-4);
     }
 
     @Override
@@ -62,7 +60,7 @@ public class Station extends Carte {
                 "nom='" + nom + '\'' +
                 ", numero='" + numero + '\'' +
                 ", arrondissement='" + arrondissement + '\'' +
-                ", bonus=" + bonus +
+                ", cb dispo =" + cbDispo +
                 ", ouvert=" + ouvert +
                 '}';
     }

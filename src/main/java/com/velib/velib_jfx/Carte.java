@@ -12,8 +12,8 @@ public class Carte {
         mesStations = new ArrayList<Station>();
     }
 
-    public void ajouteStation(String codeStation, String name, String arrondissement, String bonus, String is_installed, int capacite, int emplacement_disp, int velo_disp, String date) {
-        mesStations.add(new Station(codeStation, name, arrondissement, bonus, is_installed, capacite, emplacement_disp, velo_disp, date));
+    public void ajouteStation(String codeStation, String name, String arrondissement, String cbDispo, String is_installed, int capacite, int emplacement_disp, int velo_disp, String date) {
+        mesStations.add(new Station(codeStation, name, arrondissement, cbDispo, is_installed, capacite, emplacement_disp, velo_disp, date));
     }
 
     /**

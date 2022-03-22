@@ -129,7 +129,7 @@
                 <columns>
                     <TableColumn fx:id="numStation" prefWidth="75.0" text="Numéro" />
                     <TableColumn fx:id="adresseTree" prefWidth="459.0" text="Adresse" />
-                    <TableColumn fx:id="bonus" prefWidth="139.0" text="Bonus" />
+                    <TableColumn fx:id="cbDispoTree" prefWidth="139.0" text="CB Dispo ?" />
                     <TableColumn fx:id="ouvert" prefWidth="129.0" text="Ouvert" />
                 </columns>
             </TableView>

@@ -23,7 +23,7 @@ public class HelloController implements Initializable {
     @FXML
     Label date, v_dispo, nb_total_pAcces, etatStation, pointAttacheDispo, cb_dispo, adresse;
     @FXML
-    TableColumn<Station, String> numStation, adresseTree, bonus, ouvert;
+    TableColumn<Station, String> numStation, adresseTree, cbDispoTree, ouvert;
     @FXML
     TableView<Station> tableView;
 
@@ -36,7 +36,7 @@ public class HelloController implements Initializable {
         // On indique quel objet possède quel valeur dans la classe Station
         numStation.setCellValueFactory(new PropertyValueFactory<>("numero"));
         adresseTree.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        bonus.setCellValueFactory(new PropertyValueFactory<>("bonus"));
+        cbDispoTree.setCellValueFactory(new PropertyValueFactory<>("cbDispo"));
         ouvert.setCellValueFactory(new PropertyValueFactory<>("ouvert"));
 
 
@@ -89,7 +89,7 @@ public class HelloController implements Initializable {
         nb_total_pAcces.setText("Nombre total de points d'attache : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getCapacite()));
         etatStation.setText("Station Ouverte : " + tableView.getSelectionModel().getSelectedItem().isOuvert());
         pointAttacheDispo.setText("Points d'attache disponbiles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getEmplacement_disp()));
-        cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getBonus());
+        cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getCbDispo());
 
         if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI")) {
             etatStation.setTextFill(Color.color(0, 1, 0));
