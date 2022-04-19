@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class HelloController implements Initializable {
-    // Créations des variables
+    // Déclarations des variables
     Carte c;
     ObservableList<Station> list;
     @FXML
@@ -79,9 +79,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    // TODO réaliser le code permettant de changer la disponibilité des stations - AVANT LE 23/03/22
-    // La date n'est pas encore rajoutée vérifier la partie (date_timestamp)
-
+    // Dès que le client appuie sur une autre station, alors on affiche les données de cette station..
     private void changerDispo() {
         adresse.setText(tableView.getSelectionModel().getSelectedItem().getNom());
         date.setText("le : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getDate()));
@@ -91,6 +89,7 @@ public class HelloController implements Initializable {
         pointAttacheDispo.setText("Points d'attache disponbiles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getEmplacement_disp()));
         cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getCbDispo());
 
+        // On affiche l'état de la station en vert, quand elle est ouverte
         if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI")) {
             etatStation.setTextFill(Color.color(0, 1, 0));
         }else{

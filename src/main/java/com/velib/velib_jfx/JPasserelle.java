@@ -9,6 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
 public class JPasserelle {
+    // Déclaration des variables
     private static String url;
     private static final Carte c = new Carte();
 

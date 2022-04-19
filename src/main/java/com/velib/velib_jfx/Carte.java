@@ -12,6 +12,7 @@ public class Carte {
         mesStations = new ArrayList<Station>();
     }
 
+    // Méthode pour ajouter des stations au tableau
     public void ajouteStation(String codeStation, String name, String arrondissement, String cbDispo, String is_installed, int capacite, int emplacement_disp, int velo_disp, String date) {
         mesStations.add(new Station(codeStation, name, arrondissement, cbDispo, is_installed, capacite, emplacement_disp, velo_disp, date));
     }
@@ -42,10 +43,15 @@ public class Carte {
         return mesStations.get(identifiant);
     }
 
+    /**
+     * Permet de savoir combien il y a de station vélibs au total
+     * @return int nb_stations
+     */
     public int nbStations() {
         return mesStations.size();
     }
 
+    // Retourne le tableau de station
     public ArrayList<Station> getMesStations() {
         return mesStations;
     }

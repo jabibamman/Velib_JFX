@@ -1,9 +1,11 @@
 package com.velib.velib_jfx;
 
-public class Station extends Carte {
+public class Station {
+    // Déclaration des variables
     private String nom, numero, cbDispo, ouvert, arrondissement, date;
     private int capacite, velo_disp, emplacement_disp;
 
+    // Constructeur
     public Station(String numero, String nom, String arrondissement, String cbDispo, String ouvert, int capacite, int emplacement_disp, int velo_disp, String date) {
         this.numero = numero;
         this.nom = nom;
@@ -17,6 +19,7 @@ public class Station extends Carte {
 
     }
 
+    // Getters
     public String getNom() {
         return nom;
     }
@@ -55,6 +58,7 @@ public class Station extends Carte {
     }
 
     @Override
+    // Méthode toString
     public String toString() {
         return "Station{" +
                 "nom='" + nom + '\'' +

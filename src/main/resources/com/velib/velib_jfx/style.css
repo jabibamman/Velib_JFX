@@ -1,7 +1,9 @@
+/* Le libellé adresse à une couleur différente */
 #adresse {
     -fx-text-fill: #ff22fd;
 }
 
+/* De base tout les textes sont en rouge */
 #date, #v_dispo, #nb_total_pAcces, #etatStation, #pointAttacheDispo, #cbDispo {
     -fx-text-fill: red;
 }
