@@ -26,6 +26,7 @@ public class JPasserelle {
 
             JSONArray data = json.getJSONArray("records");
 
+            // On parcourt les la listes des enregistrements des stations
             for (int i = 0; i < json.getInt("nhits"); i++) {
                 JSONObject js = data.getJSONObject(i);
                 JSONObject fields = js.getJSONObject("fields");
