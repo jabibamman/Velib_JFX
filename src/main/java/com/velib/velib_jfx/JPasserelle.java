@@ -36,7 +36,6 @@ public class JPasserelle {
                 String stationcode = fields.getString("stationcode");
 
 
-
                 // Switch qui va permettre d'affecter le n° d'arrondissement
                 switch (stationcode.charAt(0)) {
                     // Stations de Paris (tout arrondissement confondu)

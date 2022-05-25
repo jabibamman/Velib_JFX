@@ -63,9 +63,14 @@ public class Station {
         return "Station{" +
                 "nom='" + nom + '\'' +
                 ", numero='" + numero + '\'' +
+                ", cbDispo='" + cbDispo + '\'' +
+                ", ouvert='" + ouvert + '\'' +
                 ", arrondissement='" + arrondissement + '\'' +
-                ", cb dispo =" + cbDispo +
-                ", ouvert=" + ouvert +
+                ", date='" + date + '\'' +
+                ", capacite=" + capacite +
+                ", velo_disp=" + velo_disp +
+                ", emplacement_disp=" + emplacement_disp +
                 '}';
     }
 }
+
