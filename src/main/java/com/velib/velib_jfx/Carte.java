@@ -12,8 +12,8 @@ public class Carte {
     }
 
     // Méthode pour ajouter des stations au tableau
-    public void ajouteStation(String codeStation, String name, String arrondissement, String cbDispo, String is_installed, int capacite, int emplacement_disp, int velo_disp, String date) {
-        mesStations.add(new Station(codeStation, name, arrondissement, cbDispo, is_installed, capacite, emplacement_disp, velo_disp, date));
+    public void ajouteStation(String codeStation, String name, String arrondissement, String cbDispo, String is_installed, int capacite, int emplacement_disp, int velo_disp, String date, String coordinates) {
+        mesStations.add(new Station(codeStation, name, arrondissement, cbDispo, is_installed, capacite, emplacement_disp, velo_disp, date, coordinates));
     }
 
     /**
@@ -52,6 +52,9 @@ public class Carte {
 
     // Retourne le tableau de station
     public ArrayList<Station> getMesStations() {
+
+
+
         return mesStations;
     }
 }

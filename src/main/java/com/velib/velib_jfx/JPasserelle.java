@@ -31,6 +31,7 @@ public class JPasserelle {
             for (int i = 0; i < json.getInt("nhits"); i++) {
                 JSONObject js = data.getJSONObject(i);
                 JSONObject fields = js.getJSONObject("fields");
+                JSONObject geometry = js.getJSONObject("geometry");
 
                 // On annonce bien ici que les variables récupéré depuis le JSON sont en String (cast)
                 String stationcode = fields.getString("stationcode");
@@ -102,7 +103,7 @@ public class JPasserelle {
                 }
 
                 // À chaque tour de boucle on insère la station qui a pour index la variable i
-                c.ajouteStation(stationcode, fields.getString("name"), num_adresse, fields.getString("is_renting"), fields.getString("is_installed"), fields.getInt("capacity"), fields.getInt("numdocksavailable"), fields.getInt("numbikesavailable"), fields.getString("duedate"));
+                c.ajouteStation(stationcode, fields.getString("name"), num_adresse, fields.getString("is_renting"), fields.getString("is_installed"), fields.getInt("capacity"), fields.getInt("numdocksavailable"), fields.getInt("numbikesavailable"), fields.getString("duedate"), String.valueOf(geometry.getJSONArray("coordinates")));
             }
         } catch (FileNotFoundException e) {
             System.err.println("Erreur : le fichier n'existe pas !\n" + e);

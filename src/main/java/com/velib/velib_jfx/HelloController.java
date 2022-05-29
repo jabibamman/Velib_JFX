@@ -33,9 +33,11 @@ public class HelloController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         c = JPasserelle.getCarte();
 
-        // On indique quel objet possède quel valeur dans la classe Station
+
+
+        // On indique quel objet possède quelle valeur dans la classe Station
         numStation.setCellValueFactory(new PropertyValueFactory<>("numero"));
-        adresseTree.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        adresseTree.setCellValueFactory(new PropertyValueFactory<>("coordinates"));
         cbDispoTree.setCellValueFactory(new PropertyValueFactory<>("cbDispo"));
         ouvert.setCellValueFactory(new PropertyValueFactory<>("ouvert"));
 
@@ -61,6 +63,9 @@ public class HelloController implements Initializable {
         // On renitialise le tableau de toutes les stations
         list.clear();
 
+        // On rénitialise la liste des disponibilités
+        changerDispo();
+
         // Récupération du text du radioButton
         RadioButton radioChoix = (RadioButton) e.getSource();
 
@@ -81,20 +86,40 @@ public class HelloController implements Initializable {
     @FXML
     // Dès que le client appuie sur une autre station, alors on affiche les données de cette station..
     private void changerDispo() {
-        adresse.setText(tableView.getSelectionModel().getSelectedItem().getNom());
-        date.setText("le : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getDate()));
-        v_dispo.setText("Vélos disponibles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getVelo_disp()));
-        nb_total_pAcces.setText("Nombre total de points d'attache : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getCapacite()));
-        etatStation.setText("Station Ouverte : " + tableView.getSelectionModel().getSelectedItem().isOuvert());
-        pointAttacheDispo.setText("Points d'attache disponbiles : " + String.valueOf(tableView.getSelectionModel().getSelectedItem().getEmplacement_disp()));
-        cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getCbDispo());
+        try {
+            adresse.setText(tableView.getSelectionModel().getSelectedItem().getNom());
+            date.setText("le : " + tableView.getSelectionModel().getSelectedItem().getDate());
+            v_dispo.setText("Vélos disponibles : " + tableView.getSelectionModel().getSelectedItem().getVelo_disp());
+            nb_total_pAcces.setText("Nombre total de points d'attache : " + tableView.getSelectionModel().getSelectedItem().getCapacite());
+            etatStation.setText("Station Ouverte : " + tableView.getSelectionModel().getSelectedItem().isOuvert());
+            pointAttacheDispo.setText("Points d'attache disponbiles : " + tableView.getSelectionModel().getSelectedItem().getEmplacement_disp());
+            cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getCbDispo());
 
-        // On affiche l'état de la station en vert, quand elle est ouverte
-        if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI")) {
-            etatStation.setTextFill(Color.color(0, 1, 0));
-        }else{
-            etatStation.setTextFill(Color.color(1, 0, 0));
+
+
+            // On affiche l'état de la station en vert, quand elle est ouverte
+            if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI") && tableView.getSelectionModel().getSelectedItem().getVelo_disp() > 0) {
+                etatStation.setTextFill(Color.rgb(50,205,50));
+                v_dispo.setTextFill(Color.rgb(50,205,50));
+            }else{
+                etatStation.setTextFill(Color.color(1, 0, 0));
+                v_dispo.setTextFill(Color.color(1, 0, 0));
+            }
+
+
+
+            // Si aucune station n'est sélectionné, alors on affiche un message l'indiquant
+        } catch (NullPointerException e) {
+            adresse.setText("Aucune station sélectionnée");
+            date.setText("");
+            v_dispo.setText("");
+            nb_total_pAcces.setText("");
+            etatStation.setText("");
+            pointAttacheDispo.setText("");
+            cb_dispo.setText("");
+
         }
+
 
     }
 
