@@ -1,4 +1,5 @@
 package com.velib.velib_jfx;
+
 import java.util.ArrayList;
 
 public class Carte {
@@ -31,7 +32,6 @@ public class Carte {
 
         return null;
     }
-
 
     /**
      * Permet l'affichage des infos du numéro de station demandé dans les paramètres

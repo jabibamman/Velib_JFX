@@ -65,11 +65,22 @@ public class Station {
         return emplacement_disp;
     }
 
+
+    /**
+     * Cette fonction retourne la date de màj de la station et les renvoie sous forme de String.
+     *
+     * @return date
+     */
     public String getDate() {
         // date.replaceAll("T", " à ") pour mieux formater la date, date.length()-4 pour supprimer le "+00:00" à la fin de la date
-        return date.replaceAll("T", " à ").substring(0, date.length()-4);
+        return date.replaceAll("T", " à ").substring(0, date.length() - 4);
     }
 
+    /**
+     * Cette fonction retourne les coordonnée de la station, et les renvoie sous forme de String
+     *
+     * @return coordinates
+     */
     public String getCoordinates() {
 
         coordinates = coordinates.replaceAll("\\[", "").replaceAll("\\]", "");
@@ -78,13 +89,16 @@ public class Station {
     }
 
 
+    /**
+     * Cette fonction retourne l'adresse de la station grâce à ses coordonnées.
+     * Elle n'est pas optimisée, elle est à refaire (surement changer de module)
+     *
+     * @return adresse
+     */
     public String getAdresse() {
-        NominatimReverseGeocodingJAPI nominatim1 = new NominatimReverseGeocodingJAPI(); //create instance with default zoom level (18)
-
-        String[] coord = adresse.split(",");
-
-        adresse = String.valueOf(nominatim1.getAdress(Double.parseDouble(coord[1]),Double.parseDouble(coord[0]))); //returns Address object for the given position
-
+        NominatimReverseGeocodingJAPI nominatim = new NominatimReverseGeocodingJAPI();
+        String[] coord = getCoordinates().split(",");
+        adresse = String.valueOf(nominatim.getAdress(Double.parseDouble(coord[1]), Double.parseDouble(coord[0])));
 
         return adresse;
 

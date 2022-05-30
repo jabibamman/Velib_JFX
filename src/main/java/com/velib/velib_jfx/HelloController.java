@@ -34,10 +34,9 @@ public class HelloController implements Initializable {
         c = JPasserelle.getCarte();
 
 
-
         // On indique quel objet possède quelle valeur dans la classe Station
         numStation.setCellValueFactory(new PropertyValueFactory<>("numero"));
-        adresseTree.setCellValueFactory(new PropertyValueFactory<>("coordinates"));
+        adresseTree.setCellValueFactory(new PropertyValueFactory<>("nom"));
         cbDispoTree.setCellValueFactory(new PropertyValueFactory<>("cbDispo"));
         ouvert.setCellValueFactory(new PropertyValueFactory<>("ouvert"));
 
@@ -120,9 +119,7 @@ public class HelloController implements Initializable {
 
         }
 
-
     }
-
 
 
 }
