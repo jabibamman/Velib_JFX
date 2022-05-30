@@ -6,7 +6,7 @@
 
     <groupId>com.velib</groupId>
     <artifactId>Velib_jfx</artifactId>
-    <version>1.1</version>
+    <version>1.1.1</version>
     <name>Velib_jfx</name>
 
     <properties>
