@@ -40,10 +40,8 @@ public class HelloController implements Initializable {
         cbDispoTree.setCellValueFactory(new PropertyValueFactory<>("cbDispo"));
         ouvert.setCellValueFactory(new PropertyValueFactory<>("ouvert"));
 
-
         // Ici on va initialiser les stations en les affichant toute sans trie de base
-        ObservableList<Station> list = getLesStations();
-        tableView.setItems(list);
+        tableView.setItems(getLesStations());
 
     }
 
@@ -69,17 +67,14 @@ public class HelloController implements Initializable {
         RadioButton radioChoix = (RadioButton) e.getSource();
 
         // Pour chaques stations on vérifie si il est égal avec celui choisis par le client
-        for(Station s : c.getMesStations()) {
-            if(s.getArrondissement().equals(radioChoix.getText())) {
+        c.getMesStations()
+                .stream()
+                .filter(s -> s.getArrondissement().equals(radioChoix.getText()))
+                .forEach(list_intermediaires::add);
 
-                list_intermediaires.add(s);
-
-            }
-        }
         // On affiche la liste dans le Table View
         list = FXCollections.observableArrayList(list_intermediaires);
         tableView.setItems(list);
-
     }
 
     @FXML
@@ -94,8 +89,6 @@ public class HelloController implements Initializable {
             pointAttacheDispo.setText("Points d'attache disponbiles : " + tableView.getSelectionModel().getSelectedItem().getEmplacement_disp());
             cb_dispo.setText("Location par carte bancaire : " + tableView.getSelectionModel().getSelectedItem().getCbDispo());
 
-
-
             // On affiche l'état de la station en vert, quand elle est ouverte
             if(tableView.getSelectionModel().getSelectedItem().isOuvert().equals("OUI") && tableView.getSelectionModel().getSelectedItem().getVelo_disp() > 0) {
                 etatStation.setTextFill(Color.rgb(50,205,50));
@@ -104,8 +97,6 @@ public class HelloController implements Initializable {
                 etatStation.setTextFill(Color.color(1, 0, 0));
                 v_dispo.setTextFill(Color.color(1, 0, 0));
             }
-
-
 
             // Si aucune station n'est sélectionné, alors on affiche un message l'indiquant
         } catch (NullPointerException e) {

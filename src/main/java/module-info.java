@@ -9,7 +9,6 @@ module com.velib.velib_jfx {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires org.json;
-    requires reverseGeocoding;
 
     opens com.velib.velib_jfx to javafx.fxml;
     exports com.velib.velib_jfx;

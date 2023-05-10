@@ -36,7 +36,6 @@ public class JPasserelle {
                 // On annonce bien ici que les variables récupéré depuis le JSON sont en String (cast)
                 String stationcode = fields.getString("stationcode");
 
-
                 // Switch qui va permettre d'affecter le n° d'arrondissement
                 switch (stationcode.charAt(0)) {
                     // Stations de Paris (tout arrondissement confondu)
@@ -44,25 +43,20 @@ public class JPasserelle {
                         // La longueur du code de la station doit être ≤ 4, car on cherche que le 1er arrondissement il est donc égal à 4 de longueur...
                         if (stationcode.length() <= 4) {
                             num_adresse = stationcode.substring(0, 1);
-
-                            // Les stations supérieures à 4 de longueur sont les autres arrondissements
-                            } else {
-                                num_adresse = stationcode.substring(0, 2);
-
+                        // Les stations supérieures à 4 de longueur sont les autres arrondissements
+                        } else {
+                            num_adresse = stationcode.substring(0, 2);
                         }
-
                         break;
 
                     case '2':
                         // Stations du 92
                         if (!Objects.equals(fields.get("nom_arrondissement_communes"), "Paris")) {
                             num_adresse = "92";
-
-                            // Stations du 2ᵉ arrondissement
+                        // Stations du 2ᵉ arrondissement
                         } else if (stationcode.length() <= 4) {
                             num_adresse = stationcode.substring(0, 1);
-
-                            // Stations du 20ᵉ arrondissements
+                        // Stations du 20ᵉ arrondissements
                         } else {
                             num_adresse = stationcode.substring(0, 2);
                         }

@@ -1,10 +1,5 @@
 package com.velib.velib_jfx;
 
-import eu.bitm.NominatimReverseGeocoding.NominatimReverseGeocodingJAPI;
-
-
-
-
 public class Station {
     // Déclaration des variables
     private String nom, numero, cbDispo, ouvert, arrondissement, date, coordinates, adresse;
@@ -32,7 +27,6 @@ public class Station {
             return nom;
             // Si le nom est null, on renvoie un message d'erreur
         } catch (NullPointerException e) {
-
             return "";
         }
     }
@@ -82,26 +76,8 @@ public class Station {
      * @return coordinates
      */
     public String getCoordinates() {
-
         coordinates = coordinates.replaceAll("\\[", "").replaceAll("\\]", "");
-
         return coordinates;
-    }
-
-
-    /**
-     * Cette fonction retourne l'adresse de la station grâce à ses coordonnées.
-     * Elle n'est pas optimisée, elle est à refaire (surement changer de module)
-     *
-     * @return adresse
-     */
-    public String getAdresse() {
-        NominatimReverseGeocodingJAPI nominatim = new NominatimReverseGeocodingJAPI();
-        String[] coord = getCoordinates().split(",");
-        adresse = String.valueOf(nominatim.getAdress(Double.parseDouble(coord[1]), Double.parseDouble(coord[0])));
-
-        return adresse;
-
     }
 
     @Override
