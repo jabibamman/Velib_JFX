@@ -1,6 +1,7 @@
 package com.velib.velib_jfx;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Carte {
 
@@ -23,14 +24,10 @@ public class Carte {
      * @param station est le nom de la station recherchée
      * @return s, ici on retourne les informations.
      */
-    public Station chercher(String station) {
-        for (Station s : mesStations) {
-            if (station.equals(s.getNumero())) {
-                return s;
-            }
-        }
-
-        return null;
+    public Optional<Station> chercher(String station) {
+        return mesStations.stream()
+                .filter(s -> station.equals(s.getNumero()))
+                .findFirst();
     }
 
     /**
@@ -52,9 +49,6 @@ public class Carte {
 
     // Retourne le tableau de station
     public ArrayList<Station> getMesStations() {
-
-
-
         return mesStations;
     }
 }
